@@ -26,6 +26,7 @@ Where
 videoPublicId - the name of the video + file type.
 
 subtitles - json object of this format: http://res.cloudinary.com/candidate-evaluation/raw/upload/v1545227339/thepresent_-_subtitles.txt .
+
 cloud_name - the cloud_name in cloudinary.com - the default is candidate-evaluation.
 
 ## Development
