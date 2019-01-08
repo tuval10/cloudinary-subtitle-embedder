@@ -1,8 +1,5 @@
 # CloudinarySubtitlesEmbedder
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/cloudinary_subtitles_embedder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is used in order to take a video that is hosted on cloudinary and subtitles, and give back a link to video with subtitles embedded in it.
 
 ## Installation
 
@@ -22,7 +19,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem is exposing a simple API:
+CloudinarySubtitlesEmbedder.addSubtitlesToVideo(videoPublicId, subtitles, cloud_name)
+Where:
+video public id is the name of the video + file type
+subtitles are a json object of this format: http://res.cloudinary.com/candidate-evaluation/raw/upload/v1545227339/thepresent_-_subtitles.txt
+and cloud_name is the cloud_name in cloudinary.com - the default is candidate-evaluation
 
 ## Development
 
