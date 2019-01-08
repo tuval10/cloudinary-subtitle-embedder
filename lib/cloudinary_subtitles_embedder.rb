@@ -1,8 +1,8 @@
 require 'cloudinary_subtitles_embedder/version'
 
 module CloudinarySubtitlesEmbedder
-  def self.addSubtitlesToVideo(videoPublicId, subtitles)
-    prefix = 'https://res.cloudinary.com/candidate-evaluation/video/upload'
+  def self.addSubtitlesToVideo(videoPublicId, subtitles, cloud_name = 'candidate-evaluation')
+    prefix = "https://res.cloudinary.com/#{cloud_name}/video/upload"
     subtitle_url = subtitles
                      .map{|s| SubtitleLine.new(s)}
                      .map(&:to_s)
