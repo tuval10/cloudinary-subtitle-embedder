@@ -21,10 +21,13 @@ Or install it yourself as:
 
 This gem is exposing a simple API:
 CloudinarySubtitlesEmbedder.addSubtitlesToVideo(videoPublicId, subtitles, cloud_name)
-Where:
-video public id is the name of the video + file type
-subtitles are a json object of this format: http://res.cloudinary.com/candidate-evaluation/raw/upload/v1545227339/thepresent_-_subtitles.txt
-and cloud_name is the cloud_name in cloudinary.com - the default is candidate-evaluation
+Where
+
+videoPublicId - the name of the video + file type.
+
+subtitles - json object of this format: http://res.cloudinary.com/candidate-evaluation/raw/upload/v1545227339/thepresent_-_subtitles.txt .
+
+cloud_name - the cloud_name in cloudinary.com - the default is candidate-evaluation.
 
 ## Development
 
