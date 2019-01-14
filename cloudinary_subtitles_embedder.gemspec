@@ -24,11 +24,7 @@ Gem::Specification.new do |spec|
   # spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     # f.match(%r{^(test|spec|features)/})
   # end
-  spec.files         = %w[lib/cloudinary_subtitles_embedder.rb
-                          lib/cloudinary_subtitles_embedder/subtitle_line.rb
-                          lib/cloudinary_subtitles_embedder/subtitle_time.rb
-                          lib/cloudinary_subtitles_embedder/version.rb
-                         ]
+  spec.files         = %w[lib/cloudinary_subtitles_embedder.rb]
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]

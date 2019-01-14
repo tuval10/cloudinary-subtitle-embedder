@@ -14,7 +14,7 @@ class SubtitleTimeTest < Minitest::Test
 
   def test_validate_duration_returns_true_to_well_formatted_strings
     valid_times.each do |time|
-      SubtitleTime.validate_duration_format(time)
+      CloudinarySubtitlesEmbedder::SubtitleTime.validate_duration_format(time)
     end
   end
 
@@ -22,14 +22,14 @@ class SubtitleTimeTest < Minitest::Test
     expected_message = 'time format supports only format hours:minutes:seconds.milliseconds'
     invalid_times.each do |invalid_time|
       assert_raise_with_message(ArgumentError, expected_message) do
-        SubtitleTime.validate_duration_format(invalid_time)
+        CloudinarySubtitlesEmbedder::SubtitleTime.validate_duration_format(invalid_time)
       end
     end
   end
 
   def test_to_seconds
     valid_times.zip(valid_times_in_seconds).each do |(time_string, expected_seconds)|
-      result = SubtitleTime.to_seconds(time_string)
+      result = CloudinarySubtitlesEmbedder::SubtitleTime.to_seconds(time_string)
       msg = "#{time_string} = #{expected_seconds} seconds"
       assert_equal expected_seconds, result, msg
     end
