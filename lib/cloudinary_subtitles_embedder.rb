@@ -9,7 +9,7 @@ module CloudinarySubtitlesEmbedder
       SubtitleLine.new(s, display_options)
     end
     prefix = "https://res.cloudinary.com/#{cloud_name}/video/upload"
-    subtitle_url = subtitles
+    subtitle_url = subtitles['subtitles']
                      .map{|s| to_sub.call(s)}
                      .map(&:to_s)
                      .reduce(&:+)

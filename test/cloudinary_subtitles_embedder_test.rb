@@ -2,6 +2,8 @@ require 'test_helper'
 require 'minitest/autorun'
 
 class CloudinarySubtitlesEmbedderTest < Minitest::Test
+  attr_accessor :subtitles_obj
+
   def expected_url
     "https://res.cloudinary.com/candidate-evaluation/video/upload/"\
 "l_text:Roboto_34px_bold:Hey%20Sweetie%21%20Sorry%20I%20got%20home%20so%20late...,so_24.8,eo_27.2,co_white,g_south,y_20/"\
@@ -27,7 +29,10 @@ class CloudinarySubtitlesEmbedderTest < Minitest::Test
 
   def test_add_subtitles_to_video
     public_id = 'The_Present.mp4'
-    result = CloudinarySubtitlesEmbedder.add_subtitles_to_video(public_id, self.class.subtitles)
+    result = CloudinarySubtitlesEmbedder.add_subtitles_to_video(
+      public_id,
+      { "subtitles" => self.class.subtitles }
+    )
     assert_equal expected_url, result
   end
 
@@ -36,7 +41,7 @@ class CloudinarySubtitlesEmbedderTest < Minitest::Test
     display_options = %w(co_white g_south y_30)
     result = CloudinarySubtitlesEmbedder.add_subtitles_to_video(
       public_id,
-      self.class.subtitles,
+      { "subtitles" => self.class.subtitles },
       'candidate-evaluation',
       display_options
     )
