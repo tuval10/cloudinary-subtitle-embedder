@@ -1,5 +1,3 @@
-require 'cloudinary_subtitles_embedder/version'
-
 module CloudinarySubtitlesEmbedder
   def self.add_subtitles_to_video(
     video_public_id,
@@ -20,4 +18,5 @@ module CloudinarySubtitlesEmbedder
 
   require 'cloudinary_subtitles_embedder/subtitle_time'
   require 'cloudinary_subtitles_embedder/subtitle_line'
+  require 'cloudinary_subtitles_embedder/version'
 end
