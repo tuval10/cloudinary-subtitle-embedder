@@ -36,6 +36,17 @@ class CloudinarySubtitlesEmbedderTest < Minitest::Test
     assert_equal expected_url, result
   end
 
+  def test_add_subtitles_to_video_handle_no_subtitles
+    public_id = 'The_Present.mp4'
+    expected_url = 'https://res.cloudinary.com/candidate-evaluation/video/upload/The_Present.mp4'
+    result = CloudinarySubtitlesEmbedder.add_subtitles_to_video(
+      public_id,
+      { "subtitles" => [] },
+      'candidate-evaluation'
+    )
+    assert_equal expected_url, result
+  end
+
   def test_add_subtitles_to_video_with_display_options
     public_id = 'The_Present.mp4'
     display_options = %w(co_white g_south y_30)

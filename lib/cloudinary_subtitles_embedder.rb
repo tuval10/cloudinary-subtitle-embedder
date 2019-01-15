@@ -13,6 +13,7 @@ module CloudinarySubtitlesEmbedder
                      .map{|s| to_sub.call(s)}
                      .map(&:to_s)
                      .reduce(&:+)
+    subtitle_url ||= ''
     prefix + subtitle_url + '/' + video_public_id
   end
 
